@@ -1,6 +1,6 @@
 #### Application destined as homework for TDD module
 
-##### Please implement missing interface *IPassword* and use in Password class
+##### Please implement missing interface *IPassword* and use in *Password* class
 
 Please create the following tests:
 1 Test class for: Password, User
