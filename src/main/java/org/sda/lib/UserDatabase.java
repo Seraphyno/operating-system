@@ -5,10 +5,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.google.inject.Singleton;
 import org.sda.api.IUser;
 import org.sda.impl.Password;
 import org.sda.impl.User;
 
+@Singleton
 public final class UserDatabase {
     
     private static final List<IUser> USERS;
@@ -35,14 +37,17 @@ public final class UserDatabase {
                 .filter(user -> user.getUsername().equals(username))
                 .findFirst();
     
+        boolean isValid = false;
         if (existentUser.isPresent()) {
             Password givenPassword = new Password(password);
-            return existentUser.get().getPassword().getKey().equals(givenPassword.getKey());
+            isValid = existentUser.get()
+                        .getPassword().getKey()
+                            .equals(givenPassword.getKey());
         } else {
             System.out.println("User not found!\nAvailable users: " + getUsers());
         }
         
-        return false;
+        return isValid;
     }
     
 }

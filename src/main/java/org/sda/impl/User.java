@@ -12,10 +12,12 @@ public class User implements IUser {
         this.password = new Password(password);
     }
     
+    @Override
     public String getUsername() {
         return username;
     }
     
+    @Override
     public Password getPassword() {
         return password;
     }
