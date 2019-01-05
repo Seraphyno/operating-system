@@ -11,6 +11,10 @@ public class Kernel implements IKernel {
     private boolean isLogged = false;
     private IUser currentUser;
     
+    public boolean isStarted() {
+        return isStarted;
+    }
+    
     @Override
     public void startUp() {
         if (isStarted) {
