@@ -30,6 +30,7 @@ public class Kernel implements IKernel {
         if (isStarted) {
             System.out.println(logout());
             System.out.println("System is shutting down!");
+            isStarted = false;  //First bug encountered! Congratulations!
         } else {
             System.out.println("System is not started yet!");
         }
