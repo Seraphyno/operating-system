@@ -50,4 +50,32 @@ public final class UserDatabase {
         return isValid;
     }
     
+    public static List<String> getPasswords() {
+        List<String> result = new ArrayList<>();
+        
+//      Moduri de a parcurge o lista
+//        for (int i = 0; i < USERS.size(); i++) {
+//            IUser iUser = USERS.get(i);
+//            Password userPassword = iUser.getPassword();
+//            String plainPassword = userPassword.getKey();
+//            result.add(plainPassword);
+//        }
+        
+//        for (IUser user : USERS) {
+//            String plainPassword = user.getPassword().getKey();
+//            result.add(plainPassword);
+//        }
+
+//        result = USERS.stream()
+//              .map(user -> user.getPassword())
+//              .map(password -> password.getKey())
+//              .collect(Collectors.toList());
+    
+        result = USERS.stream()
+                .map(IUser::getPassword)
+                .map(Password::getKey)
+                .collect(Collectors.toList());
+
+        return result;
+    }
 }
