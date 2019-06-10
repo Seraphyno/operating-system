@@ -19,4 +19,4 @@ Please create the following tests:
 ##### Please refrain from pushing code into the repository
 
 Make good use of https://www.google.com and https://stackoverflow.com/
-For any test-related questions please contact me via private message on slack
+For any questions please contact me via private message on slack
